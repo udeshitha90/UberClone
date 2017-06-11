@@ -1,0 +1,51 @@
+
+<ion-header>
+
+  <ion-navbar color="primary" >
+    <ion-title>Pick Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class=" primary-bg">
+  <div class="light-bg padding-xs" padding-top>
+
+    <ion-badge color="secondary" margin-bottom>{{ job.payment_method }}</ion-badge>
+
+    <ion-list class="list-no-border" margin-top>
+      <ion-item class="round secondary-bg" margin-top>
+        <ion-icon name="pin" color="light"  item-left></ion-icon>
+        <div>
+          <h4 ion-text color="light" >{{ job.from.title }}</h4>
+          <span ion-text color="light" >{{ job.from.address }}</span>
+        </div>
+      </ion-item>
+      <ion-item class="round" margin-top>
+        <ion-icon name="ios-flag-outline" item-left></ion-icon>
+        <div>
+          <h4>{{ job.to.title }}</h4>
+          <span>{{ job.to.address }}</span>
+        </div>
+      </ion-item>
+      <ion-item class="round secondary-bg" margin-top>
+        <ion-icon name="call" color="light"  item-left></ion-icon>
+        <div>
+          <h4 ion-text color="light" >{{ job.customer.name }}</h4>
+          <span ion-text color="light" >{{ job.customer.phone }}</span>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-grid padding class="bottom-buttons">
+    <ion-row>
+      <ion-col>
+        <button  ion-button block color="light" >I'M HERE</button>
+      </ion-col>
+      <ion-col>
+        <button  ion-button block color="secondary"  (click)="pickup()">PICK UP</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

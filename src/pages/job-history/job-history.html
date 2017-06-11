@@ -1,0 +1,68 @@
+
+<ion-header>
+
+  <ion-navbar color="primary" >
+    <button  ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Job History</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class=" primary-bg">
+  <ion-grid class="stats light-bg">
+    <ion-row>
+      <ion-col text-center>
+        <span class="label">Today</span>
+        <h4>{{ stats.today }}</h4>
+      </ion-col>
+      <ion-col text-center>
+        <span class="label">This Week</span>
+        <h4>{{ stats.this_week }}</h4>
+      </ion-col>
+      <ion-col text-center>
+        <span class="label">This Month</span>
+        <h4>{{ stats.this_month }}</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <span class="label">Last Month</span>
+        <h4>{{ stats.last_month }}</h4>
+      </ion-col>
+      <ion-col text-center>
+        <span class="label">This Year</span>
+        <h4>{{ stats.this_year }}</h4>
+      </ion-col>
+      <ion-col text-center>
+        <span class="label">Last Year</span>
+        <h4>{{ stats.last_year }}</h4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- list of history records -->
+  <ion-list class="dark-list list-no-border">
+    <ion-item class="primary-bg" *ngFor="let dv of dv">
+      <div>
+        <span ion-text color="light" *ngIf="dv">{{ dv.DateTime}}</span>
+      </div>
+      <div>
+        <span ion-text color="gray" >ID</span>
+        <span ion-text color="light" *ngIf="dv">{{ dv.BookingID }}</span>
+      </div>
+      <div class="bold">
+        <span ion-text color="light" *ngIf="dv">{{ dv.CustomerName }}</span>
+      </div>
+      <div>
+        <span ion-text color="light" *ngIf="dv">{{ dv.DropDescription }}</span>
+      </div>
+      <div class="uppercase">
+        <span ion-text color="secondary" *ngIf="dv">{{ dv.PickupDescription }}</span>
+      </div>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

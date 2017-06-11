@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar color="primary" >
+    <button  ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class=" primary-bg">
+  <div padding text-center>
+    <h3 ion-text color="light" *ngIf="dv">{{ dv.SelectDriverDetailsResult.FirstName}} {{ dv.SelectDriverDetailsResult.LastName}}</h3>
+    <h4 ion-text color="gray" *ngIf="dv">{{ dv.SelectDriverDetailsResult.MobileNo}}</h4>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <span ion-text color="gray" >Referral Code</span>
+          <h4 ion-text color="light" *ngIf="dv">{{ dv.SelectDriverDetailsResult.UserID}}</h4>
+        </ion-col>
+        <ion-col>
+          <span ion-text color="gray" >Rating</span>
+          <h4>
+            <ion-icon name="md-star" color="yellow"  *ngFor="let start of range(driver.rating)"></ion-icon>
+            <ion-icon name="md-star" color="dark"  *ngFor="let start of range(5- driver.rating)"></ion-icon>
+          </h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <button  ion-button block padding color="gray" >
+      {{ driver.balance }} LKR
+    </button>
+
+    <div>
+      <span ion-text color="light" >pending({{ driver.balance_pending }})</span>
+    </div>
+  </div>
+</ion-content>

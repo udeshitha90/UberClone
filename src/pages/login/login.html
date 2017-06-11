@@ -1,0 +1,59 @@
+
+<ion-content class=" auth-bg">
+
+  <div class="auth-content">
+
+    <div class="light-bg">
+
+      <!-- Logo -->
+      <div padding text-center>
+        <div class="logo secondary-bg">
+          <ion-icon name="ios-car" color="light" ></ion-icon>
+        </div>
+        <h2 ion-text color="dark" >
+         VoW Smart Taxi
+        </h2>
+        <p ion-text color="dark" >Taxi driver</p>
+      </div>
+
+      <!-- Login form -->
+
+      <ion-list class="list-form" padding>
+
+        <ion-item>
+          <ion-input type="text" placeholder="Email or username" [(ngModel)]="user.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="password" placeholder="Password" [(ngModel)]="user.password"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <div padding>
+        <button  ion-button color="secondary"  block (click)="login()">
+          Login
+        </button>
+      </div>
+
+    </div>
+
+    <div padding=""></div>
+
+    <!-- Other links -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <span ion-text color="light" >Forgot password?</span>
+        </ion-col>
+        <ion-col>
+          <span ion-text color="light" >
+            New here?
+            <span ion-text color="secondary"  (click)="signup()">Sign up</span>
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+</ion-content>
